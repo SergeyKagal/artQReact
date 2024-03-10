@@ -1,0 +1,10 @@
+.link {
+  display: block;
+  max-width: 120px;
+
+  & {
+    button {
+      width: 100%;
+    }
+  }
+}
