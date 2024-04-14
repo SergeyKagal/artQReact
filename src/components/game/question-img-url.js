@@ -1,5 +1,5 @@
 export function setImgUrl(categoryNum, questionNum) {
-  return `https://github.com/SergeyKagal/image-data/blob/master/img/${
+  return `https://github.com/SergeyKagal/image-data/blob/master/full/${
     categoryNum > 0 ? categoryNum : ''
-  }${questionNum}.jpg?raw=true`;
+  }${questionNum}full.jpg?raw=true`;
 }

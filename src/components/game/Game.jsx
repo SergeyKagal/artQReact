@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { setImgUrl } from './question-img-url';
 
 const variants = [0, 1, 2, 3];
 
@@ -12,6 +13,10 @@ function Game(props) {
       <h4>Category number {categoryNumber}</h4>
       <h4>Question number {questionNumber}</h4>
       <p>Question text</p>
+      <img
+        src={setImgUrl(categoryNumber, questionNumber)}
+        alt='question image'
+      />
       <h4>Answers</h4>
       <ol>
         {variants.map((variant) => (
