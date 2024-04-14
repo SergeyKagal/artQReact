@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { setImgUrl } from './question-img-url';
+import './Game.css';
 
 const variants = [0, 1, 2, 3];
 
@@ -14,16 +15,17 @@ function Game(props) {
       <h4>Question number {questionNumber}</h4>
       <p>Question text</p>
       <img
+        className='question__image'
         src={setImgUrl(categoryNumber, questionNumber)}
         alt='question image'
       />
       <h4>Answers</h4>
-      <ol>
+      <ul className='answers'>
         {variants.map((variant) => (
           <li key={variant}>
             <button
               onClick={() =>
-                questionNumber < 10
+                questionNumber < 9
                   ? setQuestionNumber(questionNumber + 1)
                   : setGameOver(true)
               }
@@ -32,7 +34,7 @@ function Game(props) {
             </button>
           </li>
         ))}
-      </ol>
+      </ul>
     </div>
   );
 }

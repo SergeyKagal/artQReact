@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import React from 'react';
 import Header from './components/Header';
 import Artquiz from './components/art/Artquiz';
@@ -7,6 +6,7 @@ import Pictures from './components/pic/Pictures';
 import { rotes } from './data/routes';
 import Home from './components/home/Home';
 import Settings from './components/settings/Settings';
+import './App.css';
 
 function App() {
   return (

@@ -16,7 +16,7 @@ function Categories(props) {
                 props.setCategoryOnOff(true);
               }}
             >
-              {e.number}
+              {e.number + 1}
             </button>
           </li>
         ))}
