@@ -1,5 +1,6 @@
 import React from 'react';
 import { categories } from '../../data/artcategories';
+import { randomizer } from './randomizer';
 
 function Categories(props) {
   console.log(props);
@@ -14,6 +15,7 @@ function Categories(props) {
               onClick={() => {
                 props.setCategoryNumber(e.number);
                 props.setCategoryOnOff(true);
+                props.setQuestionNumbers(randomizer());
               }}
             >
               {e.number + 1}
