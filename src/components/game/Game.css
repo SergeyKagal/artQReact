@@ -9,3 +9,6 @@
   list-style: none;
   padding: 10px;
 }
+.variant__button {
+  width: 30px;
+}

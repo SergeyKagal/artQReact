@@ -1,6 +1,7 @@
 import React from 'react';
 import { categories } from '../../data/artcategories';
 import { randomizer } from './randomizer';
+import './Categories.css';
 
 function Categories(props) {
   console.log(props);
@@ -12,6 +13,7 @@ function Categories(props) {
         {categories.map((e) => (
           <li key={e.number}>
             <button
+              className='category__button'
               onClick={() => {
                 props.setCategoryNumber(e.number);
                 props.setCategoryOnOff(true);
