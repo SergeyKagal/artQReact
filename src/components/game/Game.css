@@ -1,6 +1,7 @@
 .question__image {
   width: 300px;
   height: 300px;
+  display: block;
 }
 .answers {
   max-width: 320px;
