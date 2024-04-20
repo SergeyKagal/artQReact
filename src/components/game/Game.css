@@ -6,6 +6,7 @@
 .answers {
   max-width: 320px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   list-style: none;
   padding: 10px;

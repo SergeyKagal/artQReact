@@ -4,8 +4,6 @@ import { randomizer } from './randomizer';
 import './Categories.css';
 
 function Categories(props) {
-  console.log(props);
-
   return (
     <>
       <h2>Select catigorie</h2>

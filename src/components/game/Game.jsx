@@ -2,22 +2,31 @@ import React, { useState } from 'react';
 import { setImgUrl } from './question-img-url';
 import './Game.css';
 import Preloader from '../Preloader/Preloader';
+import { rightAnswerNum } from './right-answer-num';
+import { getVariants } from './get-variants';
+import { images } from '../../data/img-data';
 
-const variants = [0, 1, 2, 3];
+// const variants = [0, 1, 2, 3];
 
 function Game(props) {
   const { categoryNumber, setGameOver } = props;
   const [questionNumberIndex, setQuestionNumberIndex] = useState(0);
   const { questionNumbers } = props;
   const [isImgLoaded, setImgLoaded] = useState(false);
-
+  const variants = getVariants(
+    rightAnswerNum(categoryNumber, questionNumbers[questionNumberIndex])
+  );
   console.log(isImgLoaded);
   return (
     <div>
       <h3>Game</h3>
       <h4>Category number {categoryNumber + 1}</h4>
       <h4>Question number {questionNumberIndex + 1}</h4>
-      <p>Question text {questionNumbers[questionNumberIndex]}</p>
+      <p>
+        Question text {questionNumbers[questionNumberIndex]}
+        <p>Кто является автором этой картины ?</p>
+        {rightAnswerNum(categoryNumber, questionNumbers[questionNumberIndex])}
+      </p>
 
       <img
         className={`question__image${isImgLoaded ? '' : ' hide'}`}
@@ -42,7 +51,7 @@ function Game(props) {
                   : setGameOver(true);
               }}
             >
-              variant {variant}
+              variant {images[variant].author}
             </button>
           </li>
         ))}
